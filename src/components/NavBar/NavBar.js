@@ -1,21 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavBar.css';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
+
 
 const NavBar = () => {
+    const [open, setOpen] = useState(true);
     return (
         <div>
             <nav className='flex justify-between'>
                 <div className='text-3xl font-bold ml-10'>
                     <h2>Quiz Exam</h2>
                 </div>
-                <div className='text-end mr-5 header text-xl font-semibold'>
-                    <NavLink to={'home'}>Home</NavLink>
-                    <NavLink to={'topics'}>Topics</NavLink>
-                    <NavLink to={'statistics'}>Statistics</NavLink>
-                    <NavLink to={'blog'}>Blog</NavLink>
+                <div className={`flex flex-col md:flex-row absolute md:static text-end mr-5 header text-xl font-semibold ${open ? 'top-[-120px]' : 'top-0 right-1'}`}>
+                    <NavLink to='home'>Home</NavLink>
+                    <NavLink to='topics'>Topics</NavLink>
+                    <NavLink to='statistics'>Statistics</NavLink>
+                    <NavLink to='blog'>Blog</NavLink>
+                </div>
+                <div onClick={() => setOpen(!open)} className="h-6 w-6 md:hidden mr-1">
+                    {
+                        open ?
+                            <Bars3Icon />
+                            :
+                            <XMarkIcon />
+                    }
                 </div>
             </nav >
+            <br />
         </div >
     );
 };
