@@ -5,7 +5,7 @@ import './TopicDetails.css';
 
 const TopicDetails = () => {
     const topicDataLoader = useLoaderData().data;
-    const question = topicDataLoader['questions'];
+    const questions = topicDataLoader['questions'];
     return (
         <div>
             <h3 className='text-3xl font-semibold text-center'>
@@ -15,7 +15,7 @@ const TopicDetails = () => {
             <div className="topic-container">
                 <div className="quiz-container text-center">
                     {
-                        question.map((quiz, index) => <Quiz
+                        questions.map((quiz, index) => <Quiz
                             key={quiz.id}
                             quiz={quiz}
                             index={index}
@@ -23,7 +23,7 @@ const TopicDetails = () => {
                     }
                 </div>
                 <div>
-                    <h2>this is answer container</h2>
+                    Total Quiz: {questions.length}
                 </div>
             </div>
         </div>
