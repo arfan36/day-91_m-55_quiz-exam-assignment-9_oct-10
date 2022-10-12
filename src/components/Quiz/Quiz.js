@@ -5,7 +5,7 @@ import { EyeIcon } from '@heroicons/react/24/solid';
 const Quiz = ({ quiz, index }) => {
     const [answer, setAnswer] = useState();
     const [open, setOpen] = useState(false);
-    const { options, id, question, correctAnswer } = quiz;
+    const { options, question, correctAnswer } = quiz;
     return (
         <div className='border mx-5 mb-10'>
             <div className='flex justify-between'>

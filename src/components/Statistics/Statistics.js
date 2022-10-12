@@ -1,10 +1,9 @@
 import React from 'react';
 
 const Statistics = () => {
-
     return (
         <div>
-            <h2>this is stastistics</h2>
+            <h2>statistics</h2>
         </div>
     );
 };
