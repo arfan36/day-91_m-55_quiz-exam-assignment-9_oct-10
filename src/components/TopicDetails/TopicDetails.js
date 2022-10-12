@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Quiz from '../Quiz/Quiz';
+import './TopicDetails.css';
 
 const TopicDetails = () => {
     const topicDataLoader = useLoaderData().data;
@@ -11,21 +12,20 @@ const TopicDetails = () => {
                 Quiz of {topicDataLoader.name}
             </h3>
 
-            <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-                <div className="grid gap-8 lg:grid-cols-1 sm:max-w-sm sm:mx-auto lg:max-w-md">
-
-
+            <div className="topic-container">
+                <div className="quiz-container text-center">
                     {
-                        question.map(quiz => <Quiz
+                        question.map((quiz, index) => <Quiz
                             key={quiz.id}
                             quiz={quiz}
+                            index={index}
                         ></Quiz>)
                     }
-
+                </div>
+                <div>
+                    <h2>this is answer container</h2>
                 </div>
             </div>
-
-
         </div>
     );
 };
