@@ -1,5 +1,7 @@
 .header a {
     margin-right: 20px;
+    padding: 2px 5px;
+    border-radius: 3px;
 }
 
 .header a:hover {

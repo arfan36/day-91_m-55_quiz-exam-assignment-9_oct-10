@@ -10,9 +10,11 @@ const NavBar = () => {
         <div>
             <nav className='flex justify-between'>
                 <div className='text-3xl font-bold ml-10'>
-                    <h2>Quiz Exam</h2>
+                    <h1>
+                        <a href='/'>Quiz Exam</a>
+                    </h1>
                 </div>
-                <div className={`flex flex-col md:flex-row absolute md:static text-end mr-5 header text-xl font-semibold ${open ? 'top-[-120px]' : 'top-0 right-1'}`}>
+                <div className={`header flex flex-col md:flex-row absolute md:static text-end mr-5 font-semibold ${open ? 'top-[-200px]' : 'top-0 right-1'}`}>
                     <NavLink to='home'>Home</NavLink>
                     <NavLink to='topics'>Topics</NavLink>
                     <NavLink to='statistics'>Statistics</NavLink>
